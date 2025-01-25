@@ -11,6 +11,13 @@ public class PlayerMove : MonoBehaviour
     Vector3 velocity;
     Vector2 look;
 
+    public Animator camAnim;
+    private bool iswalking;
+
+    private bool groundedPlayer;
+    private float gravityValue = -9.81f;
+    private float jumpHeight = 1.0f;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -26,6 +33,14 @@ public class PlayerMove : MonoBehaviour
         UpdateGravity();
         UpdateMovement();
         UpdateLook();
+        CheckForHeadBob();
+
+        camAnim.SetBool("isWalking", iswalking);
+
+        if (Input.GetButtonDown("Jump") && groundedPlayer)
+        {
+            velocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+        }
     }
 
     private void UpdateGravity()
@@ -60,6 +75,17 @@ public class PlayerMove : MonoBehaviour
 
 
 
+    }
+    void CheckForHeadBob()
+    {
+        if (controller.velocity.magnitude > 0.01f)
+        {
+            iswalking = true;
+        }
+        else
+        {
+            iswalking = false;
+        }
     }
 
 }
