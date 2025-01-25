@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8067485051844005247}
   - component: {fileID: 1449876868398511337}
   - component: {fileID: 2476710775684130018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 3
-  movementSpeed: 10
+  movementSpeed: 20
   mass: 1
   cameraTransform: {fileID: 7945135992380080010}
   camAnim: {fileID: 7577072362798499562}
