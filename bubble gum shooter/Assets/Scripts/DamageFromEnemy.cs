@@ -18,7 +18,7 @@ public class DamageFromEnemy : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player") 
         {
