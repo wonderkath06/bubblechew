@@ -18,7 +18,7 @@ public class MsinMenu : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("gabriel sin");
     }
 
 }
