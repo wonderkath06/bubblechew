@@ -7,14 +7,18 @@ public class gumpickup : MonoBehaviour
 {
     AudioSource audioSource;
     public Animator kamim;
-    public bool isgumming;
+    public bool isgumming = false;
     SerializeField Gum;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        kamim.SetBool("isGumming", isgumming);
+        
     }
 
+    private void Update()
+    {
+        kamim.SetBool("isGumming", isgumming);
+    }
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.collider.name);
