@@ -37,10 +37,7 @@ public class PlayerMove : MonoBehaviour
 
         camAnim.SetBool("isWalking", iswalking);
 
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
-        {
-            velocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
-        }
+        
     }
 
     private void UpdateGravity()

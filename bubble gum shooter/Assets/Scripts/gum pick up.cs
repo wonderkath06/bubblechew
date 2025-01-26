@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class gumpickup : MonoBehaviour
 {
     AudioSource audioSource;
     public Animator kamim;
-    private bool isgumming;
+    public bool isgumming;
+    SerializeField Gum;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -15,8 +17,11 @@ public class gumpickup : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        isgumming = true;
-       
-            audioSource.Play();
+        Debug.Log(collision.collider.name);
+        
+        if (collision.gameObject.tag == "Gum")
+            isgumming = true;   
+                    
+        audioSource.Play();
     }
 }
